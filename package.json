@@ -1,13 +1,29 @@
 {
-	"name": "curve25519",
+	"name": "curve25519-n",
 	"description": "A binding to the curve25519-donna library.",
 	"version": "1.1.0",
-	"author": "Jann Horn <jannhorn@googlemail.com>",
 	"main": "index.js",
 	"scripts": {
 		"test": "node test.js"
 	},
-	"dependencies": {
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/volschin/node-curve25519.git"
+  },
+  "bugs": {
+    "url": "https://github.com/volschin/node-curve25519/issues"
+  },
+  "author": {
+    "name": "Jann Horn",
+    "email": "jannhorn@googlemail.com"
+  },
+   "maintainers": [
+    {
+      "name": "volschin",
+      "email": "volschin@googlemail.com"
+    }],
+ "license": "ISC",
+  "dependencies": {
 		"nan": "^2.0.9",
 		"bindings": "~1.2.1"
 	}
