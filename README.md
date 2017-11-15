@@ -2,7 +2,7 @@
 
 This is a binding to the curve25519-donna library for node. Usage:
 
-    var curve = require('curve25519');
+    var curve = require('curve25519-n');
 
 Methods
 =======
