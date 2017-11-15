@@ -20,4 +20,4 @@ Derive your shared secret with someone else by giving this function two 32-bytes
 
 Installing
 ==========
-Not yet on npm, I will only put it there when it's stable. Just work with `git clone` and `npm link`.
+`npm i -S curve25519-n` or `yarn add curve25519-n`.
