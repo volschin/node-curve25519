@@ -1,3 +1,5 @@
+[![Known Vulnerabilities](https://snyk.io/test/npm/curve25519-n/badge.svg)](https://snyk.io/test/npm/curve25519-n)
+
 This is a binding to the curve25519-donna library for node. Usage:
 
     var curve = require('curve25519');
