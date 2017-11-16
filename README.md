@@ -1,4 +1,5 @@
 [![npm version](https://badge.fury.io/js/curve25519-n.svg)](https://badge.fury.io/js/curve25519-n)
+[![Build Status](https://travis-ci.org/volschin/node-curve25519.svg?branch=master)](https://travis-ci.org/volschin/node-curve25519)
 [![Known Vulnerabilities](https://snyk.io/test/npm/curve25519-n/badge.svg)](https://snyk.io/test/npm/curve25519-n)
 
 This is a binding to the curve25519-donna library for node. Usage:
