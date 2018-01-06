@@ -5,6 +5,19 @@ node_js:
   - "6"
   - "8"
   - "9"
+os:
+  - linux
+  - osx
+
+before_install:
+  - npm install -g typescript
+  - npm install -g mocha
+  - node --version
+  - npm --version
+  - gcc --version
+  - g++ --version
+  - yarn --version
+  
 cache:
   yarn: true
   directories:
