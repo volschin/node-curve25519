@@ -8,6 +8,8 @@ This is a binding to the curve25519-donna library for node. Usage:
 
 Methods
 =======
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/volschin/node-curve25519.svg)](https://greenkeeper.io/)
 `curve.makeSecretKey(secret)`
 -----------------------------
 Provide it with a 32-bytes-long `Buffer` and it will be modified in-place in order to be a usable secret key. Doesn't return anything.
