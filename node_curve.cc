@@ -34,4 +34,4 @@ extern "C" void init (Handle<Object> target) {
 }
 
 
-NODE_MODULE(curve, init)
+NODE_MODULE(NODE_GYP_MODULE_NAME, init)
