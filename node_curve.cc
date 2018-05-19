@@ -10,7 +10,7 @@
 
 #include <nan.h>
 
-using namespace node;
+//using namespace node;
 using namespace v8;
 
 static NAN_METHOD(DoCurve);
@@ -23,8 +23,8 @@ static NAN_METHOD(DoCurve) {
     return Nan::ThrowSyntaxError(usage);
   }
   unsigned char* arg0 = (unsigned char*) node::Buffer::Data(info[0]->ToObject());
-  unsigned char* arg1 = (unsigned char*) Buffer::Data(info[1]->ToObject());
-  unsigned char* arg2 = (unsigned char*) Buffer::Data(info[2]->ToObject());
+  unsigned char* arg1 = (unsigned char*) node::Buffer::Data(info[1]->ToObject());
+  unsigned char* arg2 = (unsigned char*) node::Buffer::Data(info[2]->ToObject());
   curve25519_donna(arg0, arg1, arg2);
 }
 
