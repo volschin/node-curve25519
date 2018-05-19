@@ -22,7 +22,7 @@ static NAN_METHOD(DoCurve) {
   if (info.Length() != 3) {
     return Nan::ThrowSyntaxError(usage);
   }
-  unsigned char* arg0 = (unsigned char*) Buffer::Data(info[0]->ToObject());
+  unsigned char* arg0 = (unsigned char*) node::Buffer::Data(info[0]->ToObject());
   unsigned char* arg1 = (unsigned char*) Buffer::Data(info[1]->ToObject());
   unsigned char* arg2 = (unsigned char*) Buffer::Data(info[2]->ToObject());
   curve25519_donna(arg0, arg1, arg2);
