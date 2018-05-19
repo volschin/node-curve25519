@@ -9,9 +9,6 @@
 
 #include <nan.h>
 
-static NAN_METHOD(DoCurve);
-extern "C" void init (v8::Handle<v8::Object>);
-
 static NAN_METHOD(DoCurve) {
   Nan::HandleScope scope;
   const char *usage = "usage: curve(a, b, c)";
@@ -24,7 +21,7 @@ static NAN_METHOD(DoCurve) {
   curve25519_donna(arg0, arg1, arg2);
 }
 
-extern "C" void init (v8::Handle<v8::Object> target) {
+extern "C" NAN_MODULE_INIT(init) {
   Nan::HandleScope scope;
   Nan::SetMethod(target, "curve", DoCurve);
 }
