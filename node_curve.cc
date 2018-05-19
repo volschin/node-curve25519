@@ -10,10 +10,10 @@
 
 #include <nan.h>
 
-//using namespace v8;
+using namespace v8;
 
 static NAN_METHOD(DoCurve);
-extern "C" void init (v8::Handle<Object>);
+extern "C" void init (Handle<Object>);
 
 static NAN_METHOD(DoCurve) {
   Nan::HandleScope scope;
@@ -27,7 +27,7 @@ static NAN_METHOD(DoCurve) {
   curve25519_donna(arg0, arg1, arg2);
 }
 
-extern "C" void init (v8::Handle<Object> target) {
+extern "C" void init (Handle<Object> target) {
   Nan::HandleScope scope;
   Nan::SetMethod(target, "curve", DoCurve);
 }
