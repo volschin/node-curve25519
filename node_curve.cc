@@ -10,7 +10,7 @@
 
 #include <nan.h>
 
-using namespace v8;
+//using namespace v8;
 
 static NAN_METHOD(DoCurve);
 extern "C" void init (v8::Handle<v8::Object>);
