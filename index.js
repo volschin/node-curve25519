@@ -10,7 +10,7 @@ var basepoint = (function() {
 })();
 
 exports.makeSecretKey = function(mysecret) {
-  if (!mysecret instanceof Buffer)
+  if (!(mysecret instanceof Buffer))
     throw 'mysecret must be a Buffer';
   if (mysecret.length != 32)
     throw 'mysecret must be 32 bytes long';
