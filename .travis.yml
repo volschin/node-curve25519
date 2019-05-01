@@ -4,6 +4,7 @@ node_js:
   - "6"
   - "8"
   - "10"
+  - "12"
 os:
   - linux
   - osx
@@ -16,7 +17,7 @@ before_install:
   - gcc --version
   - g++ --version
   - yarn --version
-  
+
 cache:
   yarn: true
   directories:
