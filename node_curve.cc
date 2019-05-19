@@ -15,9 +15,9 @@ static NAN_METHOD(DoCurve) {
   if (info.Length() != 3) {
     return Nan::ThrowSyntaxError(usage);
   }
-  unsigned char* arg0 = (unsigned char*) node::Buffer::Data(info[0]->ToObject(info.GetIsolate()->GetCurrentContext()).ToLocalChecked();
-  unsigned char* arg1 = (unsigned char*) node::Buffer::Data(info[1]->ToObject(info.GetIsolate()->GetCurrentContext()).ToLocalChecked();
-  unsigned char* arg2 = (unsigned char*) node::Buffer::Data(info[2]->ToObject(info.GetIsolate()->GetCurrentContext()).ToLocalChecked();
+  unsigned char* arg0 = (unsigned char*) node::Buffer::Data(info[0]->ToObject(info.GetIsolate()->GetCurrentContext()).ToLocalChecked());
+  unsigned char* arg1 = (unsigned char*) node::Buffer::Data(info[1]->ToObject(info.GetIsolate()->GetCurrentContext()).ToLocalChecked());
+  unsigned char* arg2 = (unsigned char*) node::Buffer::Data(info[2]->ToObject(info.GetIsolate()->GetCurrentContext()).ToLocalChecked());
   curve25519_donna(arg0, arg1, arg2);
 }
 
