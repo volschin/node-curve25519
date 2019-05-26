@@ -1,6 +1,8 @@
 node-curve25519
 ===============
-[![npm version](https://badge.fury.io/js/curve25519-n.svg)](https://badge.fury.io/js/curve25519-n)
+[![npm version](https://img.shields.io/npm/v/curve25519-n.svg?style=plastic)](https://www.npmjs.com/package/curve25519-n)
+[![npm downloads](https://img.shields.io/npm/dt/curve25519-n.svg?style=plastic)](https://www.npmjs.com/package/curve25519-n)
+[![GitHub last commit](https://img.shields.io/github/last-commit/volschin/node-curve25519.svg?style=plastic)](https://github.com/volschin/node-curve25519)
 [![Build Status](https://travis-ci.com/volschin/node-curve25519.svg?branch=master)](https://travis-ci.com/volschin/node-curve25519)
 [![Build status](https://ci.appveyor.com/api/projects/status/ge3jjijetqp2lf4h?svg=true)](https://ci.appveyor.com/project/volschin/node-curve25519)
 [![Known Vulnerabilities](https://snyk.io/test/npm/curve25519-n/badge.svg)](https://snyk.io/test/npm/curve25519-n)
