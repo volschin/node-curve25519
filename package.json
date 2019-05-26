@@ -9,7 +9,7 @@
     "bindings",
     "hap"
   ],
-  "version": "1.4.0",
+  "version": "1.5.0",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
