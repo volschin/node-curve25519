@@ -16,13 +16,13 @@ static Napi::Value Curve(const Napi::CallbackInfo& info) {
     return info.Env().Undefined();
   }
 
-  unsigned char tempBuffer[32];
-  Napi::Buffer<char> buf0 = Napi::Buffer<char>::Copy(info.Env(), info[0].As<Napi::Buffer<char>>().Data(), 32);
-  Napi::Buffer<char> buf1 = Napi::Buffer<char>::Copy(info.Env(), info[1].As<Napi::Buffer<char>>().Data(), 32);
+  uint8_t tempBuffer[32];
+  Napi::Buffer<uint8_t> buf0 = Napi::Buffer<uint8_t>::Copy(info.Env(), info[0].As<Napi::Buffer<uint8_t>>().Data(), 32);
+  Napi::Buffer<uint8_t> buf1 = Napi::Buffer<uint8_t>::Copy(info.Env(), info[1].As<Napi::Buffer<uint8_t>>().Data(), 32);
 
-  curve25519_donna(tempBuffer, (const unsigned char*)buf0.Data(), (const unsigned char*)buf1.Data());
+  curve25519_donna(tempBuffer, buf0.Data(), buf1.Data());
 
-  return Napi::Buffer<char>::Copy(info.Env(), (const char *)tempBuffer, 32);
+  return Napi::Buffer<uint8_t>::Copy(info.Env(), (const uint8_t *)tempBuffer, 32);
 }
 
 static Napi::Object Init(Napi::Env env, Napi::Object exports) {
