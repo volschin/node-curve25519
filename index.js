@@ -35,7 +35,6 @@ function makeSecretKey(mysecret) {
  */
 function derivePublicKey(mysecret) {
   if (mysecret.length !== 32) { throw new Error('mysecret must be 32 bytes long'); }
-  const mypublic = Buffer.alloc(32);
   return Curve(mysecret, basepoint());
 }
 
