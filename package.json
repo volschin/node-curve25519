@@ -7,7 +7,7 @@
     "curve25519",
     "node",
     "bindings",
-    "hap"
+    "napi"
   ],
   "version": "1.5.0",
   "main": "index.js",
@@ -37,7 +37,12 @@
     "node": ">=4.8.0"
   },
   "dependencies": {
-    "nan": "^2.14.0",
-    "bindings": "~1.5.0"
+    "bindings": "~1.5.0",
+    "node-addon-api": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
   }
 }

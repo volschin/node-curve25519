@@ -1,33 +1,62 @@
-var binding = require("bindings")("curve");
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-bitwise */
+const binding = require('bindings')('Curve');
 
-var basepoint = (function() {
-  var buf = new Buffer(32);
+function basepoint() {
+  const buf = Buffer.alloc(32).fill(0);
   buf[0] = 9;
-  for (var i=1; i<32; i++) {
-    buf[i] = 0;
-  }
   return buf;
-})();
-
-exports.makeSecretKey = function(mysecret) {
-  if (!(mysecret instanceof Buffer))
-    throw 'mysecret must be a Buffer';
-  if (mysecret.length != 32)
-    throw 'mysecret must be 32 bytes long';
-  mysecret[0] &= 248;
-  mysecret[31] &= 127;
-  mysecret[31] |= 64;
-  return mysecret;
 }
 
-exports.derivePublicKey = function (mysecret) {
-  var mypublic = new Buffer(32);
-  binding.curve(mypublic, mysecret, basepoint);
+/**
+ * Make secret key
+ * @param {*} mysecret
+ * @return {Buffer} secretKey
+ */
+
+function makeSecretKey(mysecret) {
+  const buf = Buffer.alloc(mysecret.length);
+  mysecret.copy(buf, 0, 0, mysecret.length);
+
+  if (!(buf instanceof Buffer)) { throw new Error('mysecret must be a Buffer'); }
+  if (buf.length !== 32) { throw new Error('mysecret must be 32 bytes long'); }
+
+  buf[0] &= 248;
+  buf[31] &= 127;
+  buf[31] |= 64;
+
+  return buf;
+}
+
+/**
+ *
+ * @param {Buffer} mysecret
+ * @return {Buffer} publicLey
+ */
+function derivePublicKey(mysecret) {
+  if (mysecret.length !== 32) { throw new Error('mysecret must be 32 bytes long'); }
+  const mypublic = Buffer.alloc(32);
+  binding.Curve(mypublic, mysecret, basepoint());
   return mypublic;
 }
 
-exports.deriveSharedSecret = function (mysecret, hispublic) {
-  var sharedSecret = new Buffer(32);
-  binding.curve(sharedSecret, mysecret, hispublic);
+/**
+ *
+ * @param {Buffer} mysecret
+ * @param {Buffer} hispublic
+ * @return {Buffer} sharedSecret
+ */
+function deriveSharedSecret(mysecret, hispublic) {
+  if (mysecret.length !== 32) { throw new Error('mysecret must be 32 bytes long'); }
+  if (hispublic.length !== 32) { throw new Error('hispublic must be 32 bytes long'); }
+
+  const sharedSecret = Buffer.alloc(32);
+  binding.Curve(sharedSecret, mysecret, hispublic);
   return sharedSecret;
 }
+
+module.exports = {
+  makeSecretKey,
+  derivePublicKey,
+  deriveSharedSecret,
+};
