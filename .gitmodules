@@ -1,3 +1,0 @@
-[submodule "curve25519-donna"]
-	path = curve25519-donna
-	url = https://github.com/agl/curve25519-donna.git

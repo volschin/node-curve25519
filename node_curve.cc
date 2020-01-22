@@ -1,7 +1,7 @@
 #include <napi.h>
 #include <stdio.h>
 
-#include "curve25519-donna/curve25519-donna.c"
+#include "curve25519-donna.c"
 
 static Napi::Value Curve(const Napi::CallbackInfo& info) {
   if (info.Length() != 2) {
