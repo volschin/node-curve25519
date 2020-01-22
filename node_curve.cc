@@ -4,25 +4,25 @@
 #include "curve25519-donna/curve25519-donna.c"
 
 static Napi::Value Curve(const Napi::CallbackInfo& info) {
-  if (info.Length() != 3) {
+  if (info.Length() != 2) {
     Napi::Error::New(info.Env(), "Expected exactly three arguments")
         .ThrowAsJavaScriptException();
     return info.Env().Undefined();
   }
   
-  if (!info[0].IsBuffer() || !info[1].IsBuffer() || !info[2].IsBuffer()) {
+  if (!info[0].IsBuffer() || !info[1].IsBuffer()) {
     Napi::Error::New(info.Env(), "All arguments must be Buffers")
         .ThrowAsJavaScriptException();
     return info.Env().Undefined();
   }
 
-  unsigned char* arg0 = reinterpret_cast<unsigned char*>(info[0].As<Napi::Buffer<char>>().Data());
-  unsigned char* arg1 = reinterpret_cast<unsigned char*>(info[1].As<Napi::Buffer<char>>().Data());
-  unsigned char* arg2 = reinterpret_cast<unsigned char*>(info[2].As<Napi::Buffer<char>>().Data());
+  unsigned char tempBuffer[32];
+  Napi::Buffer<char> buf0 = Napi::Buffer<char>::Copy(info.Env(), info[0].As<Napi::Buffer<char>>().Data(), 32);
+  Napi::Buffer<char> buf1 = Napi::Buffer<char>::Copy(info.Env(), info[1].As<Napi::Buffer<char>>().Data(), 32);
 
-  curve25519_donna(arg0, arg1, arg2);
+  curve25519_donna(tempBuffer, (const unsigned char*)buf0.Data(), (const unsigned char*)buf1.Data());
 
-  return info.Env().Undefined();
+  return Napi::Buffer<char>::Copy(info.Env(), (const char *)tempBuffer, 32);
 }
 
 static Napi::Object Init(Napi::Env env, Napi::Object exports) {
