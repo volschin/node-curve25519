@@ -9,7 +9,7 @@
     "bindings",
     "napi"
   ],
-  "version": "1.5.0",
+  "version": "1.6.0",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
@@ -34,7 +34,7 @@
   "homepage": "https://github.com/volschin/node-curve25519",
   "license": "ISC",
   "engines": {
-    "node": ">=4.8.0"
+    "node": ">=8.16.0"
   },
   "dependencies": {
     "bindings": "~1.5.0",
