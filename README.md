@@ -7,6 +7,7 @@ node-curve25519
 [![Appveyor Build status](https://img.shields.io/appveyor/ci/volschin/node-curve25519/master.svg?logo=appveyor)](https://ci.appveyor.com/project/volschin/node-curve25519)
 [![Known Vulnerabilities](https://snyk.io/test/npm/curve25519-n/badge.svg)](https://snyk.io/test/npm/curve25519-n)
 [![Greenkeeper badge](https://badges.greenkeeper.io/volschin/node-curve25519.svg)](https://greenkeeper.io/)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=volschin_node-curve25519&metric=alert_status)](https://sonarcloud.io/dashboard?id=volschin_node-curve25519)
 
 This is a binding to the curve25519-donna library for node. Usage:
 
