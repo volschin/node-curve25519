@@ -3,6 +3,7 @@ node-curve25519
 [![npm version](https://img.shields.io/npm/v/curve25519-n.svg)](https://www.npmjs.com/package/curve25519-n)
 [![npm downloads](https://img.shields.io/npm/dt/curve25519-n.svg)](https://www.npmjs.com/package/curve25519-n)
 [![GitHub last commit](https://img.shields.io/github/last-commit/volschin/node-curve25519.svg)](https://github.com/volschin/node-curve25519)
+![Node-CI](https://github.com/volschin/node-curve25519/workflows/Node-CI/badge.svg)
 [![Appveyor Build status](https://img.shields.io/appveyor/ci/volschin/node-curve25519/master.svg?logo=appveyor)](https://ci.appveyor.com/project/volschin/node-curve25519)
 [![Known Vulnerabilities](https://snyk.io/test/npm/curve25519-n/badge.svg)](https://snyk.io/test/npm/curve25519-n)
 [![Greenkeeper badge](https://badges.greenkeeper.io/volschin/node-curve25519.svg)](https://greenkeeper.io/)
